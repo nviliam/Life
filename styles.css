@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+#gameCanvas {
+    display: none;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100vw; /* Teljes szélesség */
+    height: 100vh; /* Teljes magasság */
+    background-color: #4CAF50;
+}
+
+#header {
+    text-align: center;
+    height: 400px; 
+}
+
+#header img {
+    max-height: 100%; 
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#characterSelection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 500px); 
+    background-color: #f0f0f0;
+    margin-top: 10px; 
+    flex-wrap: wrap; /* Engedélyezze az elemek soron belüli elhelyezkedését */
+}
+
+.character {
+    margin: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.character img {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.character-name {
+    display: none;
+    position: absolute;
+    top: 180px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(130, 132, 130, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 30px;
+    white-space: nowrap;
+    box-shadow: 0px 4px 15px rgba(70, 70, 70, 0.9);
+}
+
+.character img:hover {
+    transform: scale(1.2); 
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.9); 
+    border-color: #05cd05; 
+}
+
+.character img:hover + .character-name {
+    display: block;
+}
+
+/* Média lekérdezések mobil optimalizáláshoz */
+@media (max-width: 768px) {
+    #header {
+        height: 300px;
+    }
+    
+    #characterSelection {
+        height: auto;
+        flex-direction: column;
+    }
+    
+    .character img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .character-name {
+        font-size: 20px;
+        top: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    #header {
+        height: 200px;
+    }
+    
+    .character img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .character-name {
+        font-size: 18px;
+        top: 120px;
+    }
+}
