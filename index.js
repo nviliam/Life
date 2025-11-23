@@ -4,7 +4,7 @@ const ctx = canvas.getContext('2d');
 // Alapértelmezett háttérszín
 let backgroundColor = 'green';
 
-// Állítsuk be a vászon méretét
+// A vászon mérete
 function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -115,9 +115,9 @@ function startGame() {
 
 const youMadeIt = new Audio('sound/YouMadeIt.mp3');
 
-function updateCharacterImage() { // Módosítva: új függvény a karakterkép frissítésére
+function updateCharacterImage() { // Új függvény a karakterkép frissítésére
     if (loopCount > 3) {
-        // Replace the player image with the tomb image when loopCount exceeds 3
+        // 3 loop után a játékos kép sírkőre módosul
         playerImage.src = tombImage.src;
         youMadeIt.play();
 
@@ -138,7 +138,6 @@ function gameLoop() {
         backgroundColor = 'green'; // Alapértelmezett zöld háttér
     }
 
-    // Rajzoljuk meg a hátteret a kiválasztott színnel
     ctx.fillStyle = backgroundColor;
     ctx.fillRect(0, 0, canvas.width, canvas.height); // Töltse ki a vásznat a háttérszínnel
 
@@ -193,7 +192,6 @@ function updatePlayer() {
 }
 
 const jumpSound = new Audio('sound/sfx_jump.mp3');
-
 
 function jump() {
     if (player.onGround) {
