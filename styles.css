@@ -34,7 +34,7 @@ body {
     height: calc(100vh - 500px); 
     background-color: #f0f0f0;
     margin-top: 10px; 
-    flex-wrap: wrap; /* Engedélyezze az elemek soron belüli elhelyezkedését */
+    flex-wrap: wrap;
 }
 
 .character {
@@ -75,7 +75,6 @@ body {
     display: block;
 }
 
-/* Média lekérdezések mobil optimalizáláshoz */
 @media (max-width: 768px) {
     #header {
         height: 300px;
